@@ -3,6 +3,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LocalDebuggerCommandArguments>--testnet -u admin -P 123 --hcusername admin --walletpass 123 --hcpassword 123</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommand>D:\test\omnicore-0.3.1-addmsvc_dll\build_msvc\x64\Debug\hcwallet.exe</LocalDebuggerCommand>
+    <LocalDebuggerCommand>$(SolutionDir)$(Platform)\$(Configuration)\hcwallet.exe</LocalDebuggerCommand>
   </PropertyGroup>
 </Project>
