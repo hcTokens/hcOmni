@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bitcoin-cli", "bitcoin-cli\bitcoin-cli.vcxproj", "{0B2D7431-F876-4A58-87BF-F748338CD3BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Debug|x64.ActiveCfg = Debug|x64
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Debug|x64.Build.0 = Debug|x64
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Debug|x86.ActiveCfg = Debug|Win32
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Debug|x86.Build.0 = Debug|Win32
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Release|x64.ActiveCfg = Release|x64
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Release|x64.Build.0 = Release|x64
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Release|x86.ActiveCfg = Release|Win32
+		{0B2D7431-F876-4A58-87BF-F748338CD3BF}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F668B3E1-6E48-4F68-AE55-86D7CC3F7507}
+		                SolutionGuid = {4ABD1207-9A90-4EC9-A8EB-203638A2605D}
+		                        SolutionGuid = {2FB733C9-24CB-4BA5-A26B-F43DAD7996B7}
+		                                SolutionGuid = {D0CAE2D0-8DB1-4A0B-80EE-800AA6C64323}
+		        SolutionGuid = {DA7D16A6-E5F0-45B3-B194-C3FE64F1BFCD}
+	EndGlobalSection
+EndGlobal

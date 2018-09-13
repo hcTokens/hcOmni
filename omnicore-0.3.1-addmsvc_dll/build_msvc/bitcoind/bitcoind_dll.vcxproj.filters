@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="DllThreadImpl\DataHandler.h">
+      <Filter>DllThreadImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="DllThreadImpl\WnEvent.h">
+      <Filter>DllThreadImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="DllThreadImpl\WnLock.h">
+      <Filter>DllThreadImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="DllThreadImpl\WnQueue.h">
+      <Filter>DllThreadImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="DllThreadImpl\WnScopedLock.h">
+      <Filter>DllThreadImpl</Filter>
+    </ClInclude>
+    <ClInclude Include="DllThread.h" />
+    <ClInclude Include="DllCommon.h" />
+    <ClInclude Include="DllInc.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="DllThreadImpl\DataHandler.cpp">
+      <Filter>DllThreadImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="DllThreadImpl\WnEvent.cpp">
+      <Filter>DllThreadImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="DllThreadImpl\WnLock.cpp">
+      <Filter>DllThreadImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="DllThreadImpl\WnQueue.cpp">
+      <Filter>DllThreadImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="DllThreadImpl\WnScopedLock.cpp">
+      <Filter>DllThreadImpl</Filter>
+    </ClCompile>
+    <ClCompile Include="DllThread.cpp" />
+    <ClCompile Include="DllCommon.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="DllThreadImpl">
+      <UniqueIdentifier>{6d2f170b-c338-430f-b0f2-e7ffa7be0c46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
