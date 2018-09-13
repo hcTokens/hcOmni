@@ -106,7 +106,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>crypt32.lib;Iphlpapi.lib;ws2_32.lib;Shlwapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;libbitcoin_consensus.lib;bitcoind.lib;libbitcoin_util.lib;libbitcoin_common.lib;libbitcoin_server.lib;libbitcoin_wallet.lib;libbitcoin_zmq.lib;libunivalue.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SuppressStartupBanner>false</SuppressStartupBanner>
-      <AdditionalLibraryDirectories>D:\test\omnicore-0.3.1-addmsvc_dll\build_msvc\x64\Debug\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\x64\Debug\</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
       <Command>XCOPY /y  "D:\test\omnicore-0.3.1-addmsvc_dll\build_msvc\x64\Debug\bitcoind_dll.dll" "C:\Go\Projects\GPPROJECT\src\github.com\HcashOrg\hcd\"</Command>

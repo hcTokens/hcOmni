@@ -12,6 +12,7 @@
 #include "rpc/server.h"
 #include "script/script.h"
 #include "uint256.h"
+#include "DllCommon.h"
 
 #include <univalue.h>
 
@@ -25,11 +26,12 @@ using mastercore::StrToInt64;
 
 std::string ParseAddress(const UniValue& value)
 {
-    CBitcoinAddress address(value.get_str());
-    if (!address.IsValid()) {
+    std::string Address(value.get_str());
+    std::string ret = FuncCallbackCharEx(CBINDEX_VALIDATEADDR, Address.c_str(), Address.size());
+    if (ret.empty()) {
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid address");
     }
-    return address.ToString();
+    return ret;
 }
 
 std::string ParseAddressOrEmpty(const UniValue& value)
