@@ -50,8 +50,9 @@ extern "C" __declspec(dllexport) void BtcStart(int nType, void* param)
 				std::string Sender = Value["Sender"].get_str();
 				std::string Reference = Value["Reference"].get_str();
 
-				std::string TxHash = Value["TxHash"].get_str();
-				std::vector<unsigned char> vecTxHash = ParseHex(TxHash);
+				std::vector<unsigned char> vecTxHash = ParseHex(Value["TxHash"].get_str());
+				std::vector<unsigned char> vecBlockHash = ParseHex(Value["BlockHash"].get_str());
+
 				INT64 Block = Value["Block"].get_int64();
 				INT64 Idx = Value["Idx"].get_int64();
 				std::string ScriptEncode = Value["ScriptEncode"].get_str();
@@ -59,11 +60,11 @@ extern "C" __declspec(dllexport) void BtcStart(int nType, void* param)
 				INT64 Time = Value["Time"].get_int64();
 				INT64 Fee = Value["Fee"].get_int64();
 
-				uint256 TxHash256(vecTxHash);
 				mp_obj.unlockLogic();
-				mp_obj.Set(TxHash256, Block, Idx, Time);
-				mp_obj.Set(Sender, Reference, Block, TxHash256, Block, Idx, &(Script[0]), Script.size(), 3, Fee);
-				//mp_obj.interpretPacket();
+				mp_obj.Set(uint256(vecTxHash), Block, Idx, Time);
+				mp_obj.SetBlockHash(uint256(vecBlockHash));
+				mp_obj.Set(Sender, Reference, Block, uint256(vecTxHash), Block, Idx, &(Script[4]), Script.size()-4, 3, Fee);
+				mp_obj.interpretPacket();
 				//mastercore_handler_tx(tx, GetHeight(), nTxIdx++, pindexNew);
 			}
 		break;

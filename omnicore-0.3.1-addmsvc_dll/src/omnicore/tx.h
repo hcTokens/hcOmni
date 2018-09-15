@@ -34,6 +34,7 @@ private:
     int64_t blockTime;  // internally nTime is still an "unsigned int"
     unsigned int tx_idx;  // tx # within the block, 0-based
     uint64_t tx_fee_paid;
+    uint256 _blockHash;
 
     int pkt_size;
     unsigned char pkt[1 + MAX_PACKETS * PACKET_SIZE];
@@ -289,6 +290,10 @@ public:
         tx_fee_paid = txf;
         memcpy(&pkt, p, pkt_size);
     }
+    void SetBlockHash(const uint256& BlockHash)
+	{
+        _blockHash = BlockHash;
+	}
 
     /** Parses the packet or payload. */
     bool interpret_Transaction();
