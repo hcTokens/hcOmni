@@ -20,7 +20,7 @@ public:
 	void NotifyAll() {m_event.notify_all();}
 
 	// 推入流数据
-	void Put(T& t)
+	void Put(const T& t)
 	{
 		m_record_set.push(t);
 

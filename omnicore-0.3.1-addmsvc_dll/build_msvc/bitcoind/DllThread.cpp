@@ -1,6 +1,16 @@
 
 #include "DllThread.h"
 
+CDataNotify::CDataNotify() :
+	type(0), data("")
+{
+
+}
+CDataNotify::CDataNotify(int tp, const std::string& dt):
+	type(tp), data(dt)
+{
+}
+
 CDllDataHandler::CDllDataHandler(void)
 {
 }
@@ -26,19 +36,18 @@ void CDllDataHandler::SetNetName(const char* name)
 
 }
 
-void CDllDataHandler::DataFunc(int& t)
+void CDllDataHandler::DataFunc(CDataNotify& data)
 {
-	std::cout << t << std::endl;
-	if (t < 0)
+	switch (data.type)
 	{
-		return;
-	}
-	switch (t)
-	{
-	case 0:
-	{
+	case CDataNotify::INIT_THREAD:
 		InitOmni();
-	}
+	break;
+	case CDataNotify::PAYLOAD_NOTIFY:
+	{
+		printf(data.data.c_str());
+		//mastercore_handler_tx(tx, GetHeight(), nTxIdx++, pindexNew)
+	} 
 	break;
 	}
 }

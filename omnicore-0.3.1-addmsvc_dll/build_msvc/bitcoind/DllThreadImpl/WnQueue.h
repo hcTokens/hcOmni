@@ -19,7 +19,7 @@ public:
 	}
 
 public:
-	void push(T& t)
+	void push(const T& t)
   {
     CWnScopedLock lock(*m_ptr_mutex);
     __super::push_back(t);

@@ -3,6 +3,7 @@
 #include "DllThread.h"
 #include "DllCommon.h"
 #include "DllInc.h"
+#include "../../src/omnicore/tx.h"
 
 fnDllCallBack_int		g_Callback_int = NULL;
 fnDllCallBack_char		g_Callback_char = NULL;
@@ -32,12 +33,40 @@ extern "C" __declspec(dllexport) void BtcStart(int nType, void* param)
 		{
 			g_DataHandler = new CDllDataHandler;
 			g_DataHandler->SetNetName((const char*)param);
-			int i = 0;
 			Sleep(100);
-			g_DataHandler->Put(i);
+			g_DataHandler->Put(CDataNotify(3, (const char*)param));
 		}
 		break;
-		
+		case 4:
+			if (g_DataHandler)
+			{
+				//g_DataHandler->Put(CDataNotify(4, (const char*)param));
+
+				std::string txId((const char*)param);
+				UniValue Value;
+				Value.read((const char*)param);
+				CMPTransaction mp_obj;
+				printf(txId.c_str());
+				std::string Sender = Value["Sender"].get_str();
+				std::string Reference = Value["Reference"].get_str();
+
+				std::string TxHash = Value["TxHash"].get_str();
+				std::vector<unsigned char> vecTxHash = ParseHex(TxHash);
+				INT64 Block = Value["Block"].get_int64();
+				INT64 Idx = Value["Idx"].get_int64();
+				std::string ScriptEncode = Value["ScriptEncode"].get_str();
+				std::vector<unsigned char> Script = ParseHex(ScriptEncode);
+				INT64 Time = Value["Time"].get_int64();
+				INT64 Fee = Value["Fee"].get_int64();
+
+				uint256 TxHash256(vecTxHash);
+				mp_obj.unlockLogic();
+				mp_obj.Set(TxHash256, Block, Idx, Time);
+				mp_obj.Set(Sender, Reference, Block, TxHash256, Block, Idx, &(Script[0]), Script.size(), 3, Fee);
+				//mp_obj.interpretPacket();
+				//mastercore_handler_tx(tx, GetHeight(), nTxIdx++, pindexNew);
+			}
+		break;
 	}	
 }
 
