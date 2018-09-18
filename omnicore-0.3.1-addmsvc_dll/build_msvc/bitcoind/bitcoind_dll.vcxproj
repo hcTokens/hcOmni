@@ -109,7 +109,8 @@
       <AdditionalLibraryDirectories>..\x64\Debug\</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>XCOPY /y  "D:\test\omnicore-0.3.1-addmsvc_dll\build_msvc\x64\Debug\bitcoind_dll.dll" "C:\Go\Projects\GPPROJECT\src\github.com\HcashOrg\hcd\"</Command>
+      <Command>XCOPY /y  "C:\omni_test\hcOmni\omnicore-0.3.1-addmsvc_dll\build_msvc\x64\Debug\bitcoind_dll.dll" "C:\Go\Projects\go\src\github.com\HcashOrg\hcwallet\"
+XCOPY /y  "C:\Go\Projects\go\src\github.com\HcashOrg\hcwallet\hcwallet.exe" "C:\omni_test\hcOmni\omnicore-0.3.1-addmsvc_dll\build_msvc\x64\Debug\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">

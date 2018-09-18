@@ -63,7 +63,7 @@ extern "C" __declspec(dllexport) void BtcStart(int nType, void* param)
 				mp_obj.unlockLogic();
 				mp_obj.Set(uint256(vecTxHash), Block, Idx, Time);
 				mp_obj.SetBlockHash(uint256(vecBlockHash));
-				mp_obj.Set(Sender, Reference, Block, uint256(vecTxHash), Block, Idx, &(Script[4]), Script.size()-4, 3, Fee);
+				mp_obj.Set(Sender, Reference, Block, uint256(vecTxHash), Block, Idx, &(Script[0]), Script.size(), 3, Fee);
 				mp_obj.interpretPacket();
 				//mastercore_handler_tx(tx, GetHeight(), nTxIdx++, pindexNew);
 			}
